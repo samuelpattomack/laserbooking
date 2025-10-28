@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Incluir Suplente - Sistema Laser FAU</title>
+  <style>
+    body { margin:0; font-family:'Segoe UI',sans-serif; background-color:#0f0f0f; color:#fff; }
+    header { background-color:#b71c1c; display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; box-shadow:0 4px 10px rgba(0,0,0,.3); }
+    .logo { display:flex; align-items:center; gap:.7rem; }
+    .logo-circle { width:36px; height:36px; background:#fff; color:#b71c1c; font-weight:700; font-size:1.3rem; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+    nav a { color:#fff; text-decoration:none; margin-left:2rem; font-weight:500; transition:opacity .2s; }
+    nav a:hover { opacity:.8; }
+    .logout { background:#fff; color:#b71c1c; padding:.4rem .9rem; border-radius:5px; font-weight:600; }
+    main { max-width:800px; margin:4rem auto; background:#1a1a1a; border-radius:10px; padding:3rem; box-shadow:0 8px 40px rgba(0,0,0,.4); }
+    h1 { color:#fff; font-size:1.7rem; margin-bottom:1rem; }
+    label { display:block; margin-top:1rem; color:#ddd; font-size:.9rem; }
+    input { width:100%; padding:.6rem; border-radius:5px; border:1px solid #444; margin-top:.3rem; background:#0f0f0f; color:#fff; }
+    button { margin-top:1.5rem; padding:.7rem 1.2rem; border:none; border-radius:5px; background:#b71c1c; color:#fff; font-weight:600; cursor:pointer; transition:background .3s; }
+    button:hover { background:#d32f2f; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <div class="logo-circle">M</div>
+    <strong>FAU - Laser Booking</strong>
+  </div>
+  <nav>
+    <a href="/agendar">Agendar</a>
+    <a href="/cancelar">Cancelar</a>
+    <a href="/suplente">Incluir Suplente</a>
+    <a href="/logout" class="logout">Sair</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Incluir Suplente</h1>
+  <form method="post" action="/api/agendamentos/{id}/suplente">
+    <label for="reservaId">ID da Reserva</label>
+    <input type="number" id="reservaId" name="reservaId" placeholder="Ex: 12" required>
+
+    <label for="suplenteId">ID do Suplente</label>
+    <input type="number" id="suplenteId" name="suplenteId" placeholder="Ex: 34" required>
+
+    <button type="submit">Adicionar Suplente</button>
+  </form>
+</main>
+</body>
+</html>

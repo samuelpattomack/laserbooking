@@ -1,0 +1,26 @@
+package br.fau.laser_booking.config;
+
+import br.fau.laser_booking.model.Aluno;
+import br.fau.laser_booking.repository.AlunoRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class Bootstrap {
+
+    @Bean
+    CommandLineRunner seedAluno(AlunoRepository repo) {
+        return args -> {
+            if (repo.count() == 0) {
+                Aluno a = new Aluno();
+                a.setNome("Fulano TFG");
+                a.setEmail("fulano@fau.br");
+                a.setSenhaHash("abc123");
+                a.setSemestre(9);
+                a.setTipoTrabalho(Aluno.TipoTrabalho.TFG);
+                repo.save(a); // provavelmente vira id=1
+            }
+        };
+    }
+}
