@@ -19,7 +19,7 @@ public class Bootstrap {
                 a.setSenhaHash("abc123");
                 a.setSemestre(9);
                 a.setTipoTrabalho(Aluno.TipoTrabalho.TFG);
-                repo.save(a); // provavelmente vira id=1
+                repo.save(a); 
             }
         };
     }
