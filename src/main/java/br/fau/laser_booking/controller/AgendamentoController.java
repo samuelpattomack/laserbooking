@@ -47,7 +47,7 @@ public class AgendamentoController {
         }
     }
 
-    // === UC04: Visualizar minhas reservas ===================================
+    // === UC04: Visualizar horário marcado ===================================
     @GetMapping("/meus/{alunoId}")
     public ResponseEntity<?> listarReservasDoAluno(@PathVariable Long alunoId) {
         try {
@@ -61,7 +61,7 @@ public class AgendamentoController {
         }
     }
 
-    // === UC02: Cancelar reserva ============================================
+    // === UC02: Cancelar Horário ============================================
     @PostMapping("/{reservaId}/cancelar")
     public ResponseEntity<?> cancelarReserva(@PathVariable Long reservaId,
                                              @RequestParam Long alunoId) {
@@ -103,7 +103,7 @@ public class AgendamentoController {
         }
     }
 
-    // === UC05: Editar reserva ==============================================
+    // === UC05: Editar horário marcado ==============================================
     // Espera params no formato ISO do input datetime-local: yyyy-MM-ddTHH:mm
     @PostMapping("/{reservaId}/editar")
     public ResponseEntity<?> editarReserva(@PathVariable Long reservaId,
