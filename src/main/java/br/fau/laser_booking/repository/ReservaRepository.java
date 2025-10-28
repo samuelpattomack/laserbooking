@@ -27,6 +27,6 @@ public interface ReservaRepository extends JpaRepository<Reserva, Long> {
             Long idToIgnore
     );
 
-    // Listagem das reservas do aluno (tela principal)
+    // Listagem dos agendamentos do aluno (tela principal)
     List<Reserva> findAllByTitularIdOrderByInicioDesc(Long titularId);
 }
