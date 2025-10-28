@@ -28,9 +28,9 @@ public class SecurityConfig {
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form
-                .loginPage("/login")              // usa sua view login.html
-                .loginProcessingUrl("/login")     // o POST do form deve ir pra /login
-                .defaultSuccessUrl("/app", true)  // SEMPRE redireciona pra /app
+                .loginPage("/login")             
+                .loginProcessingUrl("/login")     
+                .defaultSuccessUrl("/app", true)  
                 .failureUrl("/login?error")
                 .permitAll()
             )
