@@ -25,7 +25,7 @@ public class Reserva {
     private LocalDateTime inicio;
     private LocalDateTime fim;
 
-    // Qual máquina (ex.: "laser1")
+    // Qual máquina (ex.: "cortadora 1")
     private String equipamento;
 
     // Status atual da reserva
